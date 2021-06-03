@@ -1,0 +1,25 @@
+
+import random
+
+guess = 0
+chances_taken = 0
+number = random.randint(1, 10)
+hasGuessed = False
+
+while guess != number and chances_taken < 5:
+    guess = int(input("Guess: "))
+    if guess == number:
+        hasGuessed = True
+        break
+    else:
+        if guess < number:
+            print("Your guess is lesser than the number!")
+        else:
+            print("You guess is higher than the number!")
+    
+    chances_taken += 1
+
+if hasGuessed:
+    print("Congratulations! You guessed the number.")
+else:
+    print('Sorry! You lost the game.')
